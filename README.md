@@ -8,10 +8,14 @@ and practice parsing or processing them to your heart's content
 Usage
 -----
 
-This tool uses the python `dataclasses` module, which is available starting in python 3.7.
+```
+Usage: generate_logs.py [options]
 
-If you have python 3.7 or higher in your system, you can just run:
+Options:
+  -h, --help            show this help message and exit
+  -l LINES, --lines=LINES
+                        Number of log lines to generate.
 
-`./generate_logs.py`
+```
 
-If you have a lower version of python (or no python, I guess), you can use the included Dockerfile.
+*NOTE:* This tool uses the python `dataclasses` module, which is available starting in python 3.7.  If you have a lower version of python (or no python) installed at the system level, you can use the included Dockerfile (assuming you've got docker installed).

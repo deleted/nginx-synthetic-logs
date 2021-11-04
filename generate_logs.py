@@ -4,6 +4,7 @@ import time
 from ipaddress import ip_network
 import itertools
 import random
+import optparse
 
 
 @dataclass
@@ -109,8 +110,14 @@ def get_useragent() -> str:
 
 
 if __name__ == "__main__":
+    parser = optparse.OptionParser()
+    parser.add_option(
+        "-l", "--lines", type=int, default=3000, help="Number of log lines to generate."
+    )
+    (options, _) = parser.parse_args()
+
     log_time = time.time()
-    for i in range(3000):
+    for i in range(options.lines):
         request = make_request()
         log_line = LogLine(
             remote_addr=get_remote_ip(),
